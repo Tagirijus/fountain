@@ -10,6 +10,8 @@ setup(
     description="a python fountain parser",
     license="BSD",
     keywords="fountain scriptwriting script",
-    url="https://github.com/Tagirijus/fountain2pdf",
+    url="https://github.com/Tagirijus/fountain",
     packages=['fountain']
 )
+
+

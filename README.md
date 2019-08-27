@@ -12,4 +12,10 @@ This python script is a fountain script parser, which converts .fountain files t
 
 ## Usage
 
-`F = fountain.Fountain(STRING)` will make `F` to a fountain object.
+```
+import fountain
+
+F = fountain.Fountain(STRING)
+```
+
+This will make `F` to a fountain object.
