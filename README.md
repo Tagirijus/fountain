@@ -6,9 +6,9 @@ This python script is a fountain script parser, which converts .fountain files t
 
 ## Install
 
-1. Make a pull request of thies repo.
-3. Go into the repo-dirc on your machine.
-2. pip3 install -e
+1. Make a pull request of this repo
+3. Go into the repo-dir on your machine
+2. `sudo python3 setup.py install`
 
 ## Usage
 
