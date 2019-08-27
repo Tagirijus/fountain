@@ -13,7 +13,7 @@ This python script is a fountain script parser, which converts .fountain files t
 ## Usage
 
 ```
-import fountain
+from fountain import fountain
 
 F = fountain.Fountain(STRING)
 ```
