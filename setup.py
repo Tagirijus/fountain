@@ -13,5 +13,3 @@ setup(
     url="https://github.com/Tagirijus/fountain",
     packages=['fountain']
 )
-
-
