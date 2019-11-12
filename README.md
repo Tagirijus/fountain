@@ -2,7 +2,9 @@
 
 ## About
 
-This python script is a fountain script parser, which converts .fountain files to python object. It is ported to Python 3 by Colton J. Provias - cj@coltonprovias.com, based on `Fountain` by Nima Yousefi & John August; original code for Objective-C at https://github.com/nyousefi/Fountain.
+This python script is a fountain script parser, which converts .fountain files to python object. It is ported to Python 3 by Colton J. Provias - cj@coltonprovias.com - [original code here](https://gist.github.com/ColtonProvias/8232624), based on `Fountain` by Nima Yousefi & John August; original code for Objective-C at https://github.com/nyousefi/Fountain.
+
+I did just some little tweaks to Coltons code, since I ran into some issues.
 
 ## Install
 
