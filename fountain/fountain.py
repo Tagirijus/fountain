@@ -53,10 +53,16 @@ class Fountain:
 
     def parse(self):
         contents = self.contents.strip().replace('\r', '')
-        if ':' in contents.splitlines()[0]:
+
+        contents_has_metadata = ':' in contents.splitlines()[0]
+        contents_has_body = '\n\n' in contents
+
+        if contents_has_metadata and contents_has_body:
             script_head, script_body = contents.split('\n\n', 1)
             self._parse_head(script_head.splitlines())
             self._parse_body(script_body.splitlines())
+        elif contents_has_metadata and not contents_has_body:
+            self._parse_head(contents.splitlines())
         else:
             self._parse_body(contents.splitlines())
 
