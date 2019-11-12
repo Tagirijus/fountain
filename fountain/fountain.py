@@ -39,15 +39,18 @@ class FountainElement:
 
 class Fountain:
     def __init__(self, string=None, path=None):
+        self.metadata = dict()
+        self.elements = list()
+
         if path:
             with open(path) as fp:
                 self.contents = fp.read()
         else:
             self.contents = string
-        self.parse()
+        if self.contents != '':
+            self.parse()
 
     def parse(self):
-        self.metadata = dict()
         contents = self.contents.strip().replace('\r', '')
         if ':' in contents.splitlines()[0]:
             script_head, script_body = contents.split('\n\n', 1)
@@ -74,7 +77,6 @@ class Fountain:
         is_inside_dialogue_block = False
         newlines_before = 0
         index = -1
-        self.elements = list()
         comment_text = list()
 
         for linenum, line in enumerate(script_body):
