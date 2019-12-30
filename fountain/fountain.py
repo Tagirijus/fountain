@@ -279,7 +279,7 @@ class Fountain:
 
             if full_strip[0] == '>':
                 newlines_before = 0
-                if len(full_strip) > 1 and full_strip[-1]:
+                if len(full_strip) > 1 and full_strip[-1] == '<':
                     self.elements.append(
                         FountainElement(
                             'Action',
