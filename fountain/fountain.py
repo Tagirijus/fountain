@@ -9,6 +9,7 @@ Further Edited by Manuel Senfft
 
 
 COMMON_TRANSITIONS = {'FADE OUT.', 'CUT TO BLACK.', 'FADE TO BLACK.'}
+UPPER_ALPHABETS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
 class FountainElement:
@@ -304,7 +305,9 @@ class Fountain:
                 newlines_before > 0 and
                 index + 1 < len(script_body) and
                 script_body[index + 1] and
-                not line[0] in ['[', ']', ',', '(', ')']
+                not line[0] in ['[', ']', ',', '(', ')'] and
+                (all([(c in UPPER_ALPHABETS) for c in full_strip])
+                    or full_strip[0] == '@')
             ):
                 newlines_before = 0
                 if full_strip[-1] == '^':
@@ -315,7 +318,7 @@ class Fountain:
                     self.elements.append(
                         FountainElement(
                             'Character',
-                            full_strip.rstrip('^').strip(),
+                            full_strip.lstrip('@').rstrip('^').strip(),
                             is_dual_dialogue=True,
                             original_line=linenum,
                             original_content=line
@@ -326,7 +329,7 @@ class Fountain:
                     self.elements.append(
                         FountainElement(
                             'Character',
-                            full_strip,
+                            full_strip.lstrip('@'),
                             original_line=linenum,
                             original_content=line
                         )
