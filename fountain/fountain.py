@@ -181,7 +181,7 @@ class Fountain:
                 self.elements.append(
                     FountainElement(
                         'Section Heading',
-                        full_strip[depth:],
+                        full_strip[depth:].strip(),
                         section_depth=depth,
                         original_line=linenum,
                         original_content=line
