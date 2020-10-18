@@ -162,9 +162,9 @@ class Fountain:
                 continue
 
             if (
-                newlines_before > 0 and
-                full_strip.startswith('[[') and
-                full_strip.endswith(']]')
+                newlines_before > 0
+                and full_strip.startswith('[[')
+                and full_strip.endswith(']]')
             ):
                 self.elements.append(
                     FountainElement(
@@ -219,9 +219,9 @@ class Fountain:
 
             if (
                 line[0:4].upper() in
-                ['INT ', 'INT.', 'EXT ', 'EXT.', 'EST ', 'EST.', 'I/E ', 'I/E.'] or
-                line[0:8].upper() in ['INT/EXT ', 'INT/EXT.'] or
-                line[0:9].upper() in ['INT./EXT ', 'INT./EXT.']
+                ['INT ', 'INT.', 'EXT ', 'EXT.', 'EST ', 'EST.', 'I/E ', 'I/E.']
+                or line[0:8].upper() in ['INT/EXT ', 'INT/EXT.']
+                or line[0:9].upper() in ['INT./EXT ', 'INT./EXT.']
             ):
                 newlines_before = 0
                 scene_name_start = line.find(line.split()[1])
@@ -302,12 +302,12 @@ class Fountain:
                 continue
 
             if (
-                newlines_before > 0 and
-                index + 1 < len(script_body) and
-                script_body[index + 1] and
-                not line[0] in ['[', ']', ',', '(', ')'] and
-                (all([(c in UPPER_ALPHABETS) for c in full_strip])
-                    or full_strip[0] == '@')
+                newlines_before > 0
+                and index + 1 < len(script_body)
+                and script_body[index + 1]
+                and not line[0] in ['[', ']', ',', '(', ')']
+                and (all([(c in UPPER_ALPHABETS) for c in full_strip])
+                     or full_strip[0] == '@')
             ):
                 newlines_before = 0
                 if full_strip[-1] == '^':
