@@ -352,6 +352,9 @@ class Fountain:
                         self.elements[-1].element_text = '\n'.join(
                             [self.elements[-1].element_text, full_strip]
                         )
+                        self.elements[-1].original_content = '\n'.join(
+                            [self.elements[-1].original_content, line]
+                        )
                     else:
                         self.elements.append(
                             FountainElement(
